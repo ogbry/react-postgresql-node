@@ -1,7 +1,7 @@
 const express = require('express');
-const cors = require('cors');
 const http = require('http');
 const socketio = require('socket.io');
+const cors = require('cors');
 require('dotenv').config();
 
 const database = require('./db');
@@ -19,7 +19,7 @@ database.then(db => {
 	app.use(routes);
 
 	io.on('connect', socket => {
-		hasLoggedIn(socket, io, db);
+		console.log('User is disconnected');
 	});
 
 	const port = process.env.PORT || '4000';
