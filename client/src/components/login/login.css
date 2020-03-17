@@ -1,0 +1,42 @@
+.container {
+    background-image: url("https://socialheroes.co.uk/wp-content/uploads/2015/12/bg.jpg");
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 20px;
+    height: 100vh;
+}
+.center{
+    text-align: center;
+}
+.form {
+    padding: 15px;
+    margin-top: 20px;
+}
+.title-wrapper {
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #EEE;
+}
+.title {
+    font-size: 45px;
+}
+.text-wrapper {
+    text-align: center;
+    padding: 15px;
+    font-family: sans-serif;
+    color: #EEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text {
+    font-size: 23px;
+}
+hr {
+    width: 90%
+}
