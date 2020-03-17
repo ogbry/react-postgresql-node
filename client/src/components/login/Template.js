@@ -1,29 +1,30 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
 import Login from './Login';
+import './login.css';
 
-const useStyles = makeStyles(theme => ({
-	root: {
-		justifyContent: 'center',
-		display: 'flex'
-	},
-	paper: {
-		margin: 400
-	}
-}));
-
-export default function SignInSide({ history }) {
-	const classes = useStyles();
-
+const SignInSide = ({ history }) => {
 	return (
-		<div className={classes.root}>
-			<div className={classes.paper}>
-				<form className={classes.form} noValidate>
-					<Login history={history} />
-					<Box mt={5}></Box>
-				</form>
+		<div className="container">
+			<div className="wrapper">
+				<div className="center">
+					<div className="title-wrapper">
+						<span className="title">Title</span>
+					</div>
+					<hr />
+					<div className="text-wrapper">
+						<span className="text">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit delinti
+							consequuntur nihil.
+						</span>
+						<form className="form" noValidate>
+							<Login history={history} />
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default SignInSide;
