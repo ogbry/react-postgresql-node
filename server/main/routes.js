@@ -8,5 +8,6 @@ router.get('/', (req, res) => res.status(200).json('Server is running'));
 
 // router.use(auth);
 router.get('/api/users', users.getAllUsers);
+router.post('/api/login', users.login);
 
 module.exports = router;
