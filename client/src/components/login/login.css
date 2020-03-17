@@ -1,42 +1,44 @@
 .container {
-    background-image: url("https://socialheroes.co.uk/wp-content/uploads/2015/12/bg.jpg");
+	background-image: url('https://socialheroes.co.uk/wp-content/uploads/2015/12/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.65);
-    padding: 20px;
-    height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.65);
+	padding: 20px;
+	height: 100vh;
 }
-.center{
-    text-align: center;
+.center {
+	text-align: center;
 }
 .form {
-    padding: 15px;
-    margin-top: 20px;
+	padding: 15px;
+	margin-top: 20px;
 }
 .title-wrapper {
-    font-family: sans-serif;
-    font-weight: 600;
-    color: #EEE;
+	font-family: sans-serif;
+	font-weight: 600;
+	color: #eee;
 }
 .title {
-    font-size: 45px;
+	font-size: 45px;
 }
 .text-wrapper {
-    text-align: center;
-    padding: 15px;
-    font-family: sans-serif;
-    color: #EEE;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	text-align: center;
+	padding: 15px;
+	font-family: sans-serif;
+	color: #eee;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .text {
-    font-size: 23px;
+	font-size: 23px;
 }
 hr {
-    width: 90%
+	width: 90%;
 }
