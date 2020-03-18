@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import Template from "../components/login/Template";
-import Homepage from "../components/content/Homepage";
+import Header from "../components/common-components/Header/Header";
 import PrivateRoutes from "./private_routes";
 import PublicRoutes from "./public_routes";
 export default function index() {
@@ -9,7 +9,7 @@ export default function index() {
     <BrowserRouter>
       <Switch>
         <PublicRoutes exact path="/" component={Template} />
-        <PrivateRoutes path="/home-page" component={Homepage} />
+        <PrivateRoutes path="/home-page" component={Header} />
       </Switch>
     </BrowserRouter>
   );
