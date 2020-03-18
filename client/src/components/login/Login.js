@@ -5,7 +5,7 @@ import googleIcon from "../img/google-icon.svg";
 import cookies from "js-cookie";
 import { post } from "../../utils/api";
 
-export default function Login() {
+export default function Login({ history }) {
   const responseGoogle = async response => {
     let user = {
       id: response.profileObj.googleId,
@@ -16,7 +16,10 @@ export default function Login() {
     };
 
     post("/api/login", user)
-      .then(res => cookies.set("token", res.data))
+      .then(res => {
+        cookies.set("token", res.data);
+        history.push("/");
+      })
       .catch(error => console.log(error.response.data));
   };
 

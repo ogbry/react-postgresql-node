@@ -1,14 +1,29 @@
 import React from "react";
 import Login from "./Login";
+import "./login.css";
 
-export default function Template() {
+const SignInSide = ({ history }) => {
   return (
-    <div className="root">
-      <div className="paper">
-        <form className="form" noValidate>
-          <Login />
-        </form>
+    <div className="container">
+      <div className="wrapper">
+        <div className="center">
+          <div className="title-wrapper">
+            <span className="title">Title</span>
+          </div>
+          <hr />
+          <div className="text-wrapper">
+            <span className="text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit delinti
+              consequuntur nihil.
+            </span>
+            <form className="form" noValidate>
+              <Login history={history} />
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default SignInSide;
