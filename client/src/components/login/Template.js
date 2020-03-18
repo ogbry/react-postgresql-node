@@ -1,7 +1,7 @@
 import React from 'react';
-import Divider from '@material-ui/core/Divider';
 import Login from './Login';
 import './login.css';
+import logo from "../../assets/faceboom(2).png"
 
 const SignInSide = ({ history }) => {
 	return (
@@ -9,7 +9,7 @@ const SignInSide = ({ history }) => {
 			<div className="wrapper">
 				<div className="center">
 					<div className="title-wrapper">
-						<span className="title">Title</span>
+						<img className="logo" src={logo} alt="" />
 					</div>
 					<hr />
 					<div className="text-wrapper">
