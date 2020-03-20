@@ -1,10 +1,12 @@
 import React from 'react'
-import  { Avatar, TextField, Badge } from '@material-ui/core'
+import  { Avatar, TextField, Badge, IconButton } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CommentIcon from '@material-ui/icons/Comment';
+import Tooltip from '@material-ui/core/Tooltip';
 import { makeStyles } from '@material-ui/core/styles';
-import './profile.css'
+import './post.css'
 
 const mockData = [
     {
@@ -38,7 +40,7 @@ const useStyles = makeStyles({
     },
   });
 
-const MockPost = (props) => {
+const Posts = (props) => {
     // console.log(new Date());
     const classes = useStyles(props);
     return (
@@ -55,7 +57,16 @@ const MockPost = (props) => {
                                 </div>
                             </div>
                             <div>
-                                <DeleteIcon style={{color: '#FFF'}} />
+                                <Tooltip title="Edit" placement="top" arrow>
+                                    <IconButton>
+                                        <EditIcon style={{color: '#FFF', cursor: 'pointer'}} />
+                                    </IconButton>
+                                </Tooltip> &nbsp;
+                                <Tooltip title="Delete" placement="top" arrow>
+                                    <IconButton>
+                                        <DeleteIcon style={{color: '#FFF', cursor: 'pointer'}} />
+                                    </IconButton>
+                                </Tooltip>
                             </div>
                         </div>
                         
@@ -65,7 +76,12 @@ const MockPost = (props) => {
                             </span>
                             {/* Condition here if image == !null */}
                             
-                            <img src={item.imgContent} alt="" />
+                            {
+                                item.imgContent ? 
+                                <img style={{padding: 20}} src={item.imgContent} alt="" />
+                                :
+                                null
+                            }
                             
                         </div>
             
@@ -97,4 +113,4 @@ const MockPost = (props) => {
     )
 }
 
-export default MockPost
+export default Posts
