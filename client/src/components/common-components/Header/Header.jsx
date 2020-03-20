@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Backdrop from "@material-ui/core/Backdrop";
 import cookies from "js-cookie";
+import logo from "../../../assets/faceboom(2).png"
 import "./header.css"
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    display: 'flex'
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -33,7 +35,7 @@ export default function Header({history}) {
       <AppBar position="static" className={classes.app}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-           insert logo here
+           <img className="header-logo" src={logo} alt="" />
           </Typography>
           <Button color="inherit" onClick={() => {
             setOpen(true)

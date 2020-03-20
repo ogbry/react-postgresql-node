@@ -1,6 +1,8 @@
 import React from 'react';
 import { Paper, Tab, Tabs, Typography, Box } from '@material-ui/core'
-import MockPost from './mockPost'
+import MockPost from './mypost/Posts'
+import Followers from './followers/Followers'
+import Following from './following/Following'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -41,15 +43,19 @@ export default function CenteredTabs() {
 
       <div className="panels">
         <TabPanel value={value} index={0}>
-            <div style={{height: '500px', overflow: 'auto'}}>
+            <div style={{height: '550px', overflow: 'auto'}}>
                 <MockPost />
             </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
-            Item Two
+            <div style={{height: '550px', overflow: 'auto', padding: '0px 30px'}}>
+                <Followers />
+            </div>
         </TabPanel>
         <TabPanel value={value} index={2}>
-            Item Three
+            <div style={{height: '550px', overflow: 'auto', padding: '0px 30px'}}>
+                <Following />
+            </div>
         </TabPanel>
       </div>
     </Paper>
