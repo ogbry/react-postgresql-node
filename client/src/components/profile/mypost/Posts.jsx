@@ -41,7 +41,6 @@ const useStyles = makeStyles({
   });
 
 const Posts = (props) => {
-    // console.log(new Date());
     const classes = useStyles(props);
     return (
         <React.Fragment>
@@ -61,7 +60,7 @@ const Posts = (props) => {
                                     <IconButton>
                                         <EditIcon style={{color: '#FFF', cursor: 'pointer'}} />
                                     </IconButton>
-                                </Tooltip> &nbsp;
+                                </Tooltip> 
                                 <Tooltip title="Delete" placement="top" arrow>
                                     <IconButton>
                                         <DeleteIcon style={{color: '#FFF', cursor: 'pointer'}} />
