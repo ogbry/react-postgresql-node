@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { GlobalContext } from "../../../context/GlobalState";
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -27,8 +28,9 @@ const useStyles = makeStyles(theme => ({
     color: "transparent"
   }
 }));
-export default function Header({history}) {
-  const [open, setOpen] = React.useState(false);
+export default function Header({history}) { 
+  const { state , dispatch } = useContext(GlobalContext);
+  const {setOpen} = state;
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -38,7 +40,10 @@ export default function Header({history}) {
            <img className="header-logo" src={logo} alt="" />
           </Typography>
           <Button color="inherit" onClick={() => {
-            setOpen(true)
+            dispatch({
+              type: "OPEN",
+              payload: { setOpen: true }
+            });
             setTimeout(() => {
               cookies.remove("token");
               history.push("/");
@@ -46,7 +51,7 @@ export default function Header({history}) {
           }}>LOGOUT</Button>
         </Toolbar>
       </AppBar>
-      <Backdrop className={classes.backdrop} open={open}>
+      <Backdrop className={classes.backdrop} open={setOpen}>
         <div className="loading">
           <span>LOGGING OUT...</span>
         </div>
