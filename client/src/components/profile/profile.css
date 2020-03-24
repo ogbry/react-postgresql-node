@@ -1,0 +1,42 @@
+.profile-wrapper {
+    margin-top: 10px;
+}
+.paper {
+    width: 800px;
+    padding: 15px;
+    border: solid 1px #CCC;
+}
+@media (max-width: 400px){
+    .paper {
+        width: 320px;
+        padding: 0px;
+    }
+}
+.justify-center{
+    display: flex;
+    justify-content: center;
+}
+.flex-column {
+    flex-direction: column;
+}
+.align-center{
+    align-items: center;
+}
+.profile-logo {
+    width: 170px !important;
+    height: 170px !important;
+}
+.profile-name {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+.profile-email {
+    font-size: 19px;
+    font-style: italic;
+    color: #AAA;
+}
+.panels {
+    border: solid 1px #CCC;
+}
