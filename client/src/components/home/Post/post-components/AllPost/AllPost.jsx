@@ -1,6 +1,5 @@
-import React, {useCallback, useEffect, useContext} from 'react';
+import React, { useContext} from 'react';
 import { GlobalContext } from "../../../../../context/GlobalState";
-import { get } from "../../../../../utils/api";
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -27,22 +26,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function AllPost() {
-  const { state, dispatch } = useContext(GlobalContext);
+  const { state } = useContext(GlobalContext);
   const { allPost } = state;
-  const renderState = useCallback(
-    () => {
-      get("/api/getPosts")
-      .then(async res => {
-        let data = await res.data;
-        dispatch({type: "POST", payload:{ allPost: [...data] }}, )
-      })
-      .catch(error => console.log(error.response.data));
-    },
-    [dispatch],
-  )
-  useEffect(()=> {
-    renderState();
-  }, [renderState])
+
   const classes = useStyles();
   return (
           allPost.map(res => {
@@ -56,7 +42,7 @@ export default function AllPost() {
                           <ListItemText
                             primary={
                             <React.Fragment>
-                              @{`${res.firstname}`} - <TimeAgo date={res.date_created}/>
+                              @{`${res.firstname}`} - <TimeAgo date={res.date_created}/>  
                             </React.Fragment>}
                             secondary={
                               <React.Fragment>
@@ -76,7 +62,8 @@ export default function AllPost() {
                                   className={classes.inline}
                                   color="textPrimary"
                                 >
-                                     <Grid container spacing={3}>
+                              
+                                        <Grid container spacing={3}>
                                           <Grid item xs={3}>
                                             <FavoriteBorderIcon />
                                           </Grid>
@@ -89,6 +76,7 @@ export default function AllPost() {
                                           <Grid item xs={3}>
                                           </Grid>
                                         </Grid>
+
                                 </Typography>
                               </React.Fragment>
                             }

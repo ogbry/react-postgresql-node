@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../common-components/Header/Header'
-import Post from '../common-components/Post/Post'
+import Post from '../home/Post/Post'
 import "./home.css";
 const Home = ({history}) => {
 

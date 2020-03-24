@@ -5,7 +5,7 @@ export const handleInput = (e, dispatch) => {
   dispatch({ type: "FIELD", fieldName: name, payload: value });
 };
 
-export const handleSubmit = (e, dispatch, userId) => {
+export const handleSubmit = (e, dispatch, userId, renderState) => {
   e.preventDefault();
   const new_date = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
@@ -22,7 +22,7 @@ export const handleSubmit = (e, dispatch, userId) => {
   };
   post("/api/posts", details)
     .then(res => {
-      // console.log(res);
+      renderState();
     })
     .catch(error => console.log(error.response.data));
   dispatch({

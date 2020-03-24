@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
   },
 }));
-export default function AddPost() {
+export default function AddPost({renderState}) {
   const userObj = jwtToken();
   const userId = userObj.id;
   const { Post, state, dispatch } = useContext(GlobalContext);
@@ -29,7 +29,7 @@ export default function AddPost() {
 
   return (
     <form onSubmit={(e) => {
-      handleSubmit(e, dispatch, userId)
+      handleSubmit(e, dispatch, userId, renderState)
     }}>
     <div className="top">
       <div className="top-details"><Avatar  src={userObj.avatar} />
