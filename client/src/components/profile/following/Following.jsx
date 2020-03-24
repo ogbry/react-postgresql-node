@@ -6,7 +6,6 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import { Avatar, Button, Divider } from '@material-ui/core';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import PersonAddDisabledIcon from '@material-ui/icons/PersonAddDisabled';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
 // import './followers.css'
 
 const following = [
@@ -81,7 +80,7 @@ const Following = () => {
         <div>
             {
                 following.filter(follow => {
-                    return follow.followed == true
+                    return follow.followed === true
                 }).map((item, index) => 
                 <div key={index}>
                     <List className="list-container">
