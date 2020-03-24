@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalState";
 import GoogleLogin from "react-google-login";
 import googleIcon from "../img/google-icon.svg";
 
 import cookies from "js-cookie";
 import { post } from "../../utils/api";
-
 export default function Login({ history }) {
+  const { dispatch } = useContext(GlobalContext);
   const responseGoogle = async response => {
+    dispatch({
+      type: "OPEN",
+      payload: { setOpen: false }
+    });
     let user = {
       id: response.profileObj.googleId,
       firstname: response.profileObj.givenName,

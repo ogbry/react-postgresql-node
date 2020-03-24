@@ -1,0 +1,17 @@
+.top-allpost{
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  padding: 10px;
+  background-color:#e0e0e0;
+}
+.center-allpost{
+  display: flex;
+  padding: 10px;
+
+}
+.bottom-allpost{
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  padding: 10px;
+  background-color:#e0e0e0;
+}
