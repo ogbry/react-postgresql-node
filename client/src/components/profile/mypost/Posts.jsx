@@ -44,6 +44,13 @@ const Posts = (props) => {
     const classes = useStyles(props);
     return (
         <React.Fragment>
+             <div style={{padding: 10}}>
+                <TextField
+                label="Search"
+                placeholder="Look for a specific post..."
+                fullWidth
+                />
+             </div>
             {
                 mockData.map((item, index) => (
                     <div key={index}>
@@ -85,12 +92,16 @@ const Posts = (props) => {
                         </div>
             
                         <div style={{padding: 20}}>
-                            <Badge style={{marginRight: 15}} badgeContent={item.likes} color="secondary">
+                            <IconButton>
+                            <Badge badgeContent={item.likes} color="secondary">
                                 <FavoriteIcon style={{color: '#DC2A4F'}} />
                             </Badge>
+                            </IconButton>
+                            <IconButton>
                             <Badge badgeContent={item.comments} color="secondary">
                                 <CommentIcon style={{color: 'blue'}} />
                             </Badge>
+                            </IconButton>
                         </div>
             
                         <div className="comment-container">

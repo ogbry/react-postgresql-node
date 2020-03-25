@@ -15,7 +15,7 @@
     flex-direction: column;
 }
 .post-container span {
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 5px;
 }
 .comment-container {
@@ -30,5 +30,5 @@
     margin-right: 10px;
     color: #FFF;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 18px;
 }
