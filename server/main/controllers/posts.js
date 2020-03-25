@@ -18,6 +18,7 @@ const post = async (req, res) => {
     });
 };
 const getPost = (req, res) => {
+  console.log('test')
   const db = req.app.get("db");
   db.query(`SELECT * from posts join users on posts.user_id = users.id`)
     .then(post => {

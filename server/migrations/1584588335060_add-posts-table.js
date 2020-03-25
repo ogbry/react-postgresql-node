@@ -15,7 +15,7 @@ exports.up = pgm => {
       notNull: true
     },
     user_id: {
-      type: "text",
+      type: "integer",
       notNull: true,
       references: '"users"'
     }
