@@ -7,13 +7,13 @@ exports.up = pgm => {
             primaryKey: true
         },
         follower_id: {
-            type: 'integer',
+            type: 'text',
             notNull: true,
             references: '"users"',
             onDelete: 'cascade'
         },
         following_id: {
-            type: 'integer',
+            type: 'text',
             notNull: true,
             references: '"users"',
             onDelete: 'cascade'
