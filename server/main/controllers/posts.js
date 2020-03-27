@@ -29,4 +29,5 @@ const getPost = (req, res) => {
       res.status(500).end();
     });
 };
+
 module.exports = { post, getPost };
