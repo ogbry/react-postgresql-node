@@ -15,6 +15,7 @@ exports.up = pgm => {
       type: 'integer',
       notNull: true,
       references: '"posts"',
+      onDelete: 'cascade'
     },
     comment: {
       type: 'text',
