@@ -16,7 +16,6 @@ const likePost = (req, res) => {
             .then(like => res.status(201).json(like))
         }
     })
-
 }
 
 module.exports = { likePost }
